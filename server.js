@@ -11,7 +11,7 @@ var express = require('express'),
 
 // CONTROLLERS
 usersController = require('./controllers/usersController');
-fitCheckController = require('./controllers/fitCheckController');
+brandsController = require('./controllers/brandsController');
 
 // MIDDLEWARE
 app.use(express.static('public'));
@@ -28,8 +28,8 @@ app.use(methodOverride(function(req, res){
   }
 }));
 
-app.use('/fitCheck', fitCheckController);
 app.use('/users', usersController);
+app.use('/brands', brandsController);
 
 // REDIRECT ROUTE
 app.get('/', function(req, res){
