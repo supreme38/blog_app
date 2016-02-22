@@ -2,13 +2,12 @@
 ar User = require('../models/users');
 var LocalStrategy   = require('passport-local').Strategy;
 
+// CREDIT TO THOM PAGE
 module.exports = function(passport) {
 	console.log('passport config invoked');
-
 	passport.serializeUser(function(user, done) {
 		done(null, user.id);
 	});
-
   passport.deserializeUser(function(id, done) {
     User.findById(id, function(err, user) {
         done(err, user);
@@ -34,16 +33,16 @@ module.exports = function(passport) {
 				newUser.password = newUser.generateHash(password);
 				newUser.username = req.body.username;
 				newUser.save(function(err) {
-					if (err) {
+					if (err) { 
 						console.log(err)
 						throw err
 					} else {
 						return done(null, newUser);
-					};
+					}
 				}); // end user save
-			}; // end user check exists
-		}); // end find user
-	}; // end localstategy params
+			} // end user check exists
+		}) // end find user
+	} // end localstategy params
 	)); // end passport local signup
 
 	// =====================
@@ -65,6 +64,6 @@ module.exports = function(passport) {
 			}
 			return done(null, user);
 		}); // end find user
-	}; // end localstrategy params
+	} // end localstrategy params
 	)); // end passport local login
 }; // end module
