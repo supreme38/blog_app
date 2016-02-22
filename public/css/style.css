@@ -1,0 +1,17 @@
+* {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  display: inline-block;
+}
+
+#info {
+  padding-bottom: 50%;
+  float: right;
+}

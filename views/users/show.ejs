@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>USERS/SHOW</title>
+    <% include ../partials/scripts %>
   </head>
   <body>
     <div id='formContainer'>
@@ -24,17 +25,18 @@
         <% for (var i = user.clothes.length-1; i >=0; i--) { %>
         <img src='<%= user.clothes[i].imglink %>'>
           <ul>
+            <div id='info'>
             <li>Shirt: <%= user.clothes[i].shirt %></li>
             <li>Pants: <%= user.clothes[i].pants %></li>
             <li>Outerwear: <%= user.clothes[i].outerwear %></li>
             <li>Shoes: <%= user.clothes[i].shoes %></li>
             <li>Accessories: <%= user.clothes[i].accessories %></li>
             <li>Comments: <%= user.clothes[i].comments %></li>
-
+            </div>
           </ul>
         <% if (usertrue) { %>
           <form action="/users/<%= user.id %>/newbrands?_method=DELETE" method="POST">
-            <input type="hidden" name="user_id" value="<%=user.clothes[i].id%>"/>
+            <input type="hidden" name="clothes_id" value="<%=user.clothes[i].id%>"/>
               <button id="delete-button">Delete</button>
             </form>
         <% } %>
