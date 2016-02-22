@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 
 // SCHEMA
 var brandSchema = mongoose.Schema({
+  imglink: String,
   shirt: String,
   pants: String,
   shoes: String,
