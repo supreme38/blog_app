@@ -1,6 +1,6 @@
 // REQUIREMENTS
-ar User = require('../models/users');
-var LocalStrategy   = require('passport-local').Strategy;
+var User = require('../models/users');
+var LocalStrategy = require('passport-local').Strategy;
 
 // CREDIT TO THOM PAGE
 module.exports = function(passport) {
@@ -33,7 +33,7 @@ module.exports = function(passport) {
 				newUser.password = newUser.generateHash(password);
 				newUser.username = req.body.username;
 				newUser.save(function(err) {
-					if (err) { 
+					if (err) {
 						console.log(err)
 						throw err
 					} else {
