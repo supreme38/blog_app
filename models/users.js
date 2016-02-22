@@ -1,6 +1,6 @@
 // REQUIREMENTS
 var mongoose = require('mongoose');
-var brandsSchema = require('./brands').schema;
+var brandSchema = require('./brands').schema;
 var bcrypt = require('bcrypt-nodejs');
 
 // SCHEMA
@@ -9,7 +9,7 @@ var userSchema = mongoose.Schema({
 	username: String,
 	email: String,
 	password: String,
-	locations: [brandsSchema]
+	clothes: [brandSchema]
 });
 
 // PASSPORT
