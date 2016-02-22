@@ -9,6 +9,7 @@ var brandSchema = mongoose.Schema({
   shoes: String,
   outerwear: String,
   accessories: String,
+  comments: String,
 });
 
 // EXPORT

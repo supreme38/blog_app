@@ -15,7 +15,6 @@ router.get('/', isLoggedIn, function(req, res) {
 
 // MIDDLEWARE - LOGIN STATUS
 function isLoggedIn(req, res, next) {
-  console.log('isLoggedIn middleware');
   if (req.isAuthenticated()) {
     return next();
   } else {

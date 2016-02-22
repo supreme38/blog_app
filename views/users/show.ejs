@@ -3,28 +3,43 @@
     <title>USERS/SHOW</title>
   </head>
   <body>
-    <% if (usertrue)  { %>
-      <h1>ADD NEW FIT</h1>
-      <form action="/users/<%= user.id %>/newbrands" method="POST">
-        <input type="text" name="imglink" placeholder="IMG LINK">
-        <input type="text" name="shirt" placeholder="SHIRT">
-        <input type="text" name="pants" placeholder="PANTS">
-        <input type="text" name="shoes" placeholder="SHOES">
-        <input type="text" name="outerwear" placeholder="OUTERWEAR">
-        <input type="text" name="accessories" placeholder="ACCESORIES">
-        <input type="submit">
-      </form>
-    <% } %>
-    <div id='container'>
+    <div id='formContainer'>
+      <% if (usertrue)  { %>
+        <h1>ADD NEW FIT</h1>
+        <form action="/users/<%= user.id %>/newbrands" method="POST">
+          <input type="text" name="imglink" placeholder="IMG LINK">
+          <input type="text" name="shirt" placeholder="SHIRT">
+          <input type="text" name="pants" placeholder="PANTS">
+          <input type="text" name="shoes" placeholder="SHOES">
+          <input type="text" name="outerwear" placeholder="OUTERWEAR">
+          <input type="text" name="accessories" placeholder="ACCESORIES">
+          <textarea name='comments' placeholder=COMMENTS></textarea>
+          <input type="submit">
+        </form>
+            <a href='/users/logout'>Logout</a>
+      <% } %>
+    </div>
+    <div id='brandsContainer'>
       <h1><%= user.username %></h1>
-      <% for (var i=0; i < user.clothes.length; i++) { %>
+        <% for (var i = user.clothes.length-1; i >=0; i--) { %>
         <img src='<%= user.clothes[i].imglink %>'>
+          <ul>
+            <li>Shirt: <%= user.clothes[i].shirt %></li>
+            <li>Pants: <%= user.clothes[i].pants %></li>
+            <li>Outerwear: <%= user.clothes[i].outerwear %></li>
+            <li>Shoes: <%= user.clothes[i].shoes %></li>
+            <li>Accessories: <%= user.clothes[i].accessories %></li>
+            <li>Comments: <%= user.clothes[i].comments %></li>
+
+          </ul>
+        <% if (usertrue) { %>
+          <form action="/users/<%= user.id %>/newbrands?_method=DELETE" method="POST">
+            <input type="hidden" name="user_id" value="<%=user.clothes[i].id%>"/>
+              <button id="delete-button">Delete</button>
+            </form>
         <% } %>
+      <% } %>
     </div>
-
-    <a href='/brands'>click me </a>
-
-
-    </div>
-  </body>
+    <a href='/brands'>See what's trending</a>
+    </body>
 </html>

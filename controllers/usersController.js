@@ -29,6 +29,7 @@ router.get('/:id', isLoggedIn, function(req, res) {
 	});
 });
 
+
 // POST
 router.post('/:id/newbrands', function(req, res) {
   User.findById(req.params.id, function(err, user) {
@@ -40,6 +41,16 @@ router.post('/:id/newbrands', function(req, res) {
 			});
 		});
 	});
+});
+
+// DELETE
+router.delete('/:id/newbrands', function(req, res){
+  User.findById(req.params.user_id, function(err,user){
+    user.clothes.id(req.body.clothes_id).remove();
+    user.save(function(){
+      res.redirect('/users/');
+    })
+  })
 });
 
 // CREATE - LOGIN
