@@ -11,7 +11,7 @@ require('./config/passport')(passport);
 
 // CONTROLLERS
 usersController = require('./controllers/usersController');
-// brandsController = require('./controllers/brandsController');
+brandsController = require('./controllers/brandsController');
 
 // MIDDLEWARE
 app.use(express.static('public'));
@@ -25,11 +25,11 @@ app.use(methodOverride(function(req, res){
     var method = req.body._method;
     delete req.body._method;
     return method;
-  }
+  };
 }));
 
 app.use('/users', usersController);
-// app.use('/brands', brandsController);
+app.use('/brands', brandsController);
 
 // REDIRECT ROUTE
 app.get('/', function(req, res){

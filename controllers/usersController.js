@@ -15,17 +15,23 @@ router.get('/', function(req, res) {
 	});
 });
 
+// LOGOUT
+router.get('/logout', function(req, res) {
+  req.logout();
+  res.redirect('/users');
+});
+
 // SHOW
 router.get('/:id', isLoggedIn, function(req, res) {
-		req.params.id == req.user.id ? res.locals.usertrue = true : res.locals.usertrue = false;
-		User.findById(req.params.id, function(err, user) {
-			res.render('users/show.ejs', { user: user });
-		});
+  req.params.id == req.user.id ? res.locals.usertrue = true : res.locals.usertrue = false;
+  User.findById(req.params.id, function(err, user) {
+  res.render('users/show.ejs', { user: user });
+	});
 });
 
 // POST
 router.post('/:id/newbrands', function(req, res) {
-	User.findById(req.params.id, function(err, user) {
+  User.findById(req.params.id, function(err, user) {
 		var brand = new Brand(req.body);
 		brand.save(function(err, brand) {
 			user.clothes.push(brand);
@@ -36,11 +42,6 @@ router.post('/:id/newbrands', function(req, res) {
 	});
 });
 
-// LOGOUT
-router.get('/logout', function(req, res) {
-    req.logout();
-    res.redirect('/users');
-});
 
 // CREATE - LOGIN
 router.post('/', passport.authenticate('local-signup', {
