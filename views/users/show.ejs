@@ -15,6 +15,16 @@
         <input type="submit">
       </form>
     <% } %>
-    <h1>test</h1>
+    <div id='container'>
+      <h1><%= user.username %></h1>
+      <% for (var i=0; i < user.clothes.length; i++) { %>
+        <img src='<%= user.clothes[i].imglink %>'>
+        <% } %>
+    </div>
+
+    <a href='/brands'>click me </a>
+
+
+    </div>
   </body>
 </html>

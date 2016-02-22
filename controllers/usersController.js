@@ -8,7 +8,7 @@ var User = require('../models/users'),
     Brand = require('../models/brands');
 
 // INDEX
-router.get('/', function(req, res) {
+router.get('/', redirectUser, function(req, res) {
 	res.locals.login = req.isAuthenticated();
 	User.find(function(err, users) {
 		res.render('users/index.ejs', { users: users });
@@ -42,7 +42,6 @@ router.post('/:id/newbrands', function(req, res) {
 	});
 });
 
-
 // CREATE - LOGIN
 router.post('/', passport.authenticate('local-signup', {
 	failureRedirect: '/users' }), function(req, res) {
@@ -57,12 +56,18 @@ router.post('/login', passport.authenticate('local-login', {
 
 // MIDDLEWARE - LOGIN STATUS
 function isLoggedIn(req, res, next) {
-	console.log('isLoggedIn middleware');
   if (req.isAuthenticated()) {
   	return next();
   } else {
   	res.redirect('/users');
   };
+};
+
+// MIDDLEWARE - REDIRECT INDEX TO SHOW
+function redirectUser(req, res, next) {
+  if (req.isAuthenticated())
+  res.redirect('/users/' + req.user.id);
+  return next();
 };
 
 // EXPORT
