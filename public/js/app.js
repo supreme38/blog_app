@@ -7,7 +7,7 @@ window.onload = function() {
       url: metadata.url,
       maxHeight: 400,
       imageReady: function(err, metadata) {
-        // convert metadata (an object) into a string using .src
+        // convert metadata (an object) into a string src link using .src
         var obj = metadata.src
         // console.log(obj);
         $('.ospry').val(obj);

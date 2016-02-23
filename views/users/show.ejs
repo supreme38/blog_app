@@ -12,11 +12,11 @@
         <% if (usertrue)  { %>
           <h1>ADD NEW FIT</h1>
           <form id="up-form">
-            <input type="file" multiple />
+            <input type="file">
             <button type="submit">Upload</button>
           </form>
           <form action="/users/<%= user.id %>/newbrands" method="POST">
-            <input class='ospry' type="text" name="imglink" placeholder="IMG LINK">
+            <input class='ospry' type="text" name="imglink" placeholder="UPLOAD IMAGE">
             <input type="text" name="shirt" placeholder="SHIRT">
             <input type="text" name="pants" placeholder="PANTS">
             <input type="text" name="shoes" placeholder="SHOES">
@@ -47,6 +47,7 @@
             <input type="hidden" name="clothes_id" value="<%=user.clothes[i].id%>"/>
               <button id="delete-button">Delete</button>
             </form>
+            <a href='/users/<%= user.clothes[i] %>/edit>'>Edit</a>
         <% } %>
       <% } %>
     </div>
