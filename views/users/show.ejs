@@ -5,49 +5,35 @@
   </head>
   <body id='showBody' class='animated fadeInDown'>
     <div id='navContainer'>
-      <a href='/brands'>See what's trending</a>
-      <a href='/users/logout'>Logout</a>
-      <p id='createMenu'> Create</p>
-      <div id='formContainer' class='off'>
+      <h2 id='appName'>Blah Blog </h2>
+      <div id='trend'><a href='/brands'>See what's trending</a></div>
+      <div id='logout'><a href='/users/logout'>Logout</a></div>
+      <div id='formContainer'>
         <% if (usertrue)  { %>
-          <h1>ADD NEW FIT</h1>
+          <h4>ADD NEW FIT</h4>
           <form id="up-form">
-            <input type="file">
-            <button type="submit">Upload</button>
+            <input class='button' type="file">
+            <button class='button' type="submit">Upload File</button>
           </form>
           <form action="/users/<%= user.id %>/newbrands" method="POST">
             <input class='ospry' type="text" name="imglink" placeholder="UPLOAD IMAGE">
-            <input type="text" name="shirt" placeholder="SHIRT">
-            <input type="text" name="pants" placeholder="PANTS">
-            <input type="text" name="shoes" placeholder="SHOES">
-            <input type="text" name="outerwear" placeholder="OUTERWEAR">
-            <input type="text" name="accessories" placeholder="ACCESORIES">
-            <textarea name='comments' placeholder=COMMENTS></textarea>
-            <input type="submit">
+            <textarea class='textbox' name='comments' placeholder=COMMENTS></textarea>
+            <button class='button'type="submit">Submit
           </form>
         <% } %>
       </div>
     </div>
     <div id='brandsContainer'>
-      <h1><%= user.username %></h1>
         <% for (var i = user.clothes.length-1; i >=0; i--) { %>
         <img src='<%= user.clothes[i].imglink %>'>
-          <ul>
-            <div id='info'>
-            <li>Shirt: <%= user.clothes[i].shirt %></li>
-            <li>Pants: <%= user.clothes[i].pants %></li>
-            <li>Outerwear: <%= user.clothes[i].outerwear %></li>
-            <li>Shoes: <%= user.clothes[i].shoes %></li>
-            <li>Accessories: <%= user.clothes[i].accessories %></li>
-            <li>Comments: <%= user.clothes[i].comments %></li>
-            </div>
-          </ul>
+            <p><%= user.clothes[i].comments %></p>
         <% if (usertrue) { %>
-          <form action="/users/<%= user.id %>/newbrands?_method=DELETE" method="POST">
+          <div id='delete'><form action="/users/<%= user.id %>/newbrands?_method=DELETE" method="POST">
             <input type="hidden" name="clothes_id" value="<%=user.clothes[i].id%>"/>
-              <button id="delete-button">Delete</button>
+              <button class='button' id="delete-button">Delete</button>
             </form>
-            <a href='/users/<%= user.clothes[i] %>/edit>'>Edit</a>
+          </div>
+            <!-- <a href='/users/<%= user.clothes[i] %>/edit>'>Edit</a> -->
         <% } %>
       <% } %>
     </div>

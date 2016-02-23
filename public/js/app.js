@@ -5,7 +5,8 @@ window.onload = function() {
   var onUpload = function(err, metadata) {
     ospry.get({
       url: metadata.url,
-      maxHeight: 400,
+      maxHeight: 800,
+      maxWidth: 400,
       imageReady: function(err, metadata) {
         // convert metadata (an object) into a string src link using .src
         var obj = metadata.src

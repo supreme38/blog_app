@@ -1,40 +1,40 @@
-  <html>
-    <head>
-      <title>USERS/INDEX</title>
-      <% include ../partials/scripts %>
-    </head>
-    <body>
+<html>
+  <head>
+    <title>USERS/INDEX</title>
+    <% include ../partials/scripts %>
+  </head>
+    <body id='loginIndex'>
       <div id='background'>
         <div id='overlay'>
           <div id='menuContainer' class='animated fadeInDown'>
-            <% if (!login) { %>
+          <% if (!login) { %>
             <div id='create'>
               <h1 id='start'>Get Started</h1>
               <br>
-          			<form action="/users" method="POST">
-          				<input style='border:none' class='login' type="text" name="username" placeholder="username">
-                  <br>
-          				<input style='border:none' class='login' type="text" name="email" placeholder="email">
-                  <br>
-          				<input style='border:none' class='login' type="text" name="password" placeholder="password">
-                  <br>
-          				<button  class='loginButton' type="submit">Create</button>
-          			</form>
-              </div>
-              <div id='login'>
-                <h1 id='log'>Log in</h1>
+              <form action="/users" method="POST">
+                <input style='border:none' class='login' type="text" name="username" placeholder="username">
                 <br>
-          				<form action="/users/login" method="POST">
-          					<input style='border:none' class='login' type="text" name="email" placeholder="email">
-                    <br>
-          					<input style='border:none' class='login' type="text" name="password" placeholder="password">
-                    <br>
-          					<button style='border:none' class='loginButton' type="submit">Login</button>
-          				</form>
-              </div>
-              <% } %>
-          </div>
+                <input style='border:none' class='login' type="text" name="email" placeholder="email">
+                <br>
+                <input style='border:none' class='login' type="text" name="password" placeholder="password">
+                <br>
+                <button  class='loginButton' type="submit">Create</button>
+              </form>
+            </div>
+            <div id='login'>
+            <h1 id='log'>Log In</h1>
+            <br>
+              <form action="/users/login" method="POST">
+                <input style='border:none' class='login' type="text" name="email" placeholder="email">
+                <br>
+                <input style='border:none' class='login' type="text" name="password" placeholder="password">
+                <br>
+                <button style='border:none' class='loginButton' type="submit">Go</button>
+              </form>
+            </div>
+        <% } %>
         </div>
       </div>
-    </body>
-  </html>
+    </div>
+  </body>
+</html>
