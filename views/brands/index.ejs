@@ -2,8 +2,9 @@
   <head>
     <title>BRANDS/INDEX</title>
     <% include ../partials/scripts %>
-    <body>
-      <div id='container'>
+    <body class='animated fadeInDown'>
+      <a href='/users/'>Home</a>
+      <div id='indexContainer'>
         <% for (var i=0; i < brands.length; i++) { %>
           <img src='<%= brands[i].imglink %>'></a>
         <% } %>

@@ -11,7 +11,20 @@ ul {
   display: inline-block;
 }
 
-#info {
-  padding-bottom: 50%;
+#brandsContainer #info {
+  padding-bottom: 150%;
   float: right;
+}
+
+#formContainer {
+  visibility: hidden;
+  position: absolute;
+}
+
+#menuContainer {
+  margin-top: 10%;
+}
+
+#showBody {
+  margin-top: 5%;
 }

@@ -3,22 +3,26 @@
     <title>USERS/SHOW</title>
     <% include ../partials/scripts %>
   </head>
-  <body>
-    <div id='formContainer'>
-      <% if (usertrue)  { %>
-        <h1>ADD NEW FIT</h1>
-        <form action="/users/<%= user.id %>/newbrands" method="POST">
-          <input type="text" name="imglink" placeholder="IMG LINK">
-          <input type="text" name="shirt" placeholder="SHIRT">
-          <input type="text" name="pants" placeholder="PANTS">
-          <input type="text" name="shoes" placeholder="SHOES">
-          <input type="text" name="outerwear" placeholder="OUTERWEAR">
-          <input type="text" name="accessories" placeholder="ACCESORIES">
-          <textarea name='comments' placeholder=COMMENTS></textarea>
-          <input type="submit">
-        </form>
-            <a href='/users/logout'>Logout</a>
-      <% } %>
+  <body id='showBody' class='animated fadeInDown'>
+    <div id='navContainer'>
+      <a href='/brands'>See what's trending</a>
+      <a href='/users/logout'>Logout</a>
+      <p id='createMenu'> Create</p>
+      <div id='formContainer' class='off'>
+        <% if (usertrue)  { %>
+          <h1>ADD NEW FIT</h1>
+          <form action="/users/<%= user.id %>/newbrands" method="POST">
+            <input type="text" name="imglink" placeholder="IMG LINK">
+            <input type="text" name="shirt" placeholder="SHIRT">
+            <input type="text" name="pants" placeholder="PANTS">
+            <input type="text" name="shoes" placeholder="SHOES">
+            <input type="text" name="outerwear" placeholder="OUTERWEAR">
+            <input type="text" name="accessories" placeholder="ACCESORIES">
+            <textarea name='comments' placeholder=COMMENTS></textarea>
+            <input type="submit">
+          </form>
+        <% } %>
+      </div>
     </div>
     <div id='brandsContainer'>
       <h1><%= user.username %></h1>
@@ -42,6 +46,5 @@
         <% } %>
       <% } %>
     </div>
-    <a href='/brands'>See what's trending</a>
     </body>
 </html>

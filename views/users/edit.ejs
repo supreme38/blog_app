@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>USERS/EDIT</title>
+    <% include ../partials/scripts %>
+  </head>
+  <body>
+    <form action="/users/<%= id %>?_method=PUT" method="POST">
+      <input type="text" name="imglink" placeholder="IMG LINK">
+      <input type="text" name="shirt" placeholder="SHIRT">
+      <input type="text" name="pants" placeholder="PANTS">
+      <input type="text" name="shoes" placeholder="SHOES">
+      <input type="text" name="outerwear" placeholder="OUTERWEAR">
+      <input type="text" name="accessories" placeholder="ACCESORIES">
+      <textarea name='comments' placeholder=COMMENTS></textarea>
+      <button>Update</button>
+    </form>
+  </body>
+</html>
