@@ -1,3 +1,5 @@
+/* Here lies my CSS */
+
 * {
   font-family: 'Raleway', sans-serif;
   text-align: center;
@@ -16,10 +18,10 @@ ul {
   float: right;
 }
 
-#formContainer {
+/*#formContainer {
   visibility: hidden;
   position: absolute;
-}
+}*/
 
 #menuContainer {
   margin-top: 10%;
