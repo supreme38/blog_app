@@ -5,7 +5,7 @@ var express = require('express'),
 
 // MODELS
 var User = require('../models/users'),
-    Brand = require('../models/brands');
+    Blog = require('../models/blogs');
 
 // JSON
 router.get('/json', function(req, res) {
@@ -46,11 +46,11 @@ router.get('/:id', isLoggedIn, function(req, res) {
 
 
 // POST
-router.post('/:id/newbrands', function(req, res) {
+router.post('/:id/newblog', function(req, res) {
   User.findById(req.params.id, function(err, user) {
-		var brand = new Brand(req.body);
-		brand.save(function(err, brand) {
-			user.clothes.push(brand);
+		var blog = new Blog(req.body);
+		blog.save(function(err, blog) {
+			user.blogs.push(blog);
 			user.save(function(err, user) {
 				res.redirect('/users/' + req.params.id);
 			});
@@ -59,23 +59,24 @@ router.post('/:id/newbrands', function(req, res) {
 });
 
 // DELETE
-router.delete('/:id/newbrands', function(req, res){
+router.delete('/:id/newblog', function(req, res){
   User.findById(req.params.id, function(err,user){
-    user.clothes.forEach(function(brand) {
-    Brand.findOneAndRemove({ _id: brand.id }, function(err) {
+    user.blogs.forEach(function(blog) {
+    Blog.findOneAndRemove({ _id: blog.id }, function(err) {
       if (err) console.log(err);
     });
    });
-   user.clothes.id(req.body.clothes_id).remove();
+   user.blogs.id(req.body.blogs_id).remove();
    user.save(function(){
      res.redirect('/users/');
-   })
-  })
+   });
+ });
 });
 
 // EDIT
 router.get('/:id/edit', function(req, res){
   User.findById(req.params.id, function(err, user){
+
     res.render('users/edit.ejs',user);
   });
 });

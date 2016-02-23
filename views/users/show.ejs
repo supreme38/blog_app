@@ -1,12 +1,12 @@
 <html>
   <head>
-    <title>USERS/SHOW</title>
+    <title>HOMEPAGE</title>
     <% include ../partials/scripts %>
   </head>
   <body id='showBody' class='animated fadeInDown'>
     <div id='navContainer'>
       <h2 id='appName'>Blah Blog </h2>
-      <div id='trend'><a href='/brands'>See what's trending</a></div>
+      <div id='trend'><a href='/blogs'>See what's trending</a></div>
       <div id='logout'><a href='/users/logout'>Logout</a></div>
       <div id='formContainer'>
         <% if (usertrue)  { %>
@@ -15,7 +15,7 @@
             <input class='button' type="file">
             <button class='button' type="submit">Upload File</button>
           </form>
-          <form action="/users/<%= user.id %>/newbrands" method="POST">
+          <form action="/users/<%= user.id %>/newblog" method="POST">
             <input class='ospry' type="text" name="imglink" placeholder="UPLOAD IMAGE">
             <textarea class='textbox' name='comments' placeholder=COMMENTS></textarea>
             <button class='button'type="submit">Submit
@@ -23,17 +23,17 @@
         <% } %>
       </div>
     </div>
-    <div id='brandsContainer'>
-        <% for (var i = user.clothes.length-1; i >=0; i--) { %>
-        <img src='<%= user.clothes[i].imglink %>'>
-            <p><%= user.clothes[i].comments %></p>
+    <div id='blogsContainer'>
+        <% for (var i = user.blogs.length-1; i >=0; i--) { %>
+        <img src='<%= user.blogs[i].imglink %>'>
+            <p><%= user.blogs[i].comments %></p>
         <% if (usertrue) { %>
-          <div id='delete'><form action="/users/<%= user.id %>/newbrands?_method=DELETE" method="POST">
-            <input type="hidden" name="clothes_id" value="<%=user.clothes[i].id%>"/>
+          <div id='delete'><form action="/users/<%= user.id %>/newblog?_method=DELETE" method="POST">
+            <input type="hidden" name="blogs_id" value="<%=user.blogs[i].id%>"/>
               <button class='button' id="delete-button">Delete</button>
             </form>
           </div>
-            <!-- <a href='/users/<%= user.clothes[i] %>/edit>'>Edit</a> -->
+            <!-- <a href='/users/<%= user.blogs[i] %>/edit>'>Edit</a> -->
         <% } %>
       <% } %>
     </div>

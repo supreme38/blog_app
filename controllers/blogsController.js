@@ -4,12 +4,12 @@ var express = require('express'),
 
 // MODELS
 var User = require('../models/users'),
-    Brand = require('../models/brands');
+    Blog = require('../models/blogs');
 
 // INDEX
 router.get('/', isLoggedIn, function(req, res) {
-  Brand.find(function(err, brands) {
-    res.render('brands/index.ejs', { brands: brands });
+  Blog.find(function(err, blogs) {
+    res.render('blogs/index.ejs', { blogs: blogs });
   });
 });
 

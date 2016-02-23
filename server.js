@@ -11,18 +11,18 @@ require('./config/passport')(passport);
 
 // CONTROLLERS
 usersController = require('./controllers/usersController');
-brandsController = require('./controllers/brandsController');
+blogsController = require('./controllers/blogsController');
 
 // MIDDLEWARE
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(session({ name: 'fit_check_auth_app', secret: 'hypebeast' }));
+app.use(session({ name: 'blog_app', secret: 'hypebeast' }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(methodOverride('_method'));
 app.use('/users', usersController);
-app.use('/brands', brandsController);
+app.use('/blogs', blogsController);
 
 // REDIRECT ROUTE
 app.get('/', function(req, res){
@@ -30,7 +30,7 @@ app.get('/', function(req, res){
 });
 
 // CONNECT & LISTEN
-mongoose.connect('mongodb://localhost:27017/fit_check');
+mongoose.connect('mongodb://localhost:27017/blog_app');
 app.listen(port, function() {
     console.log('LISTEN TO ME ON PORT ' + port);
 });
