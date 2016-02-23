@@ -4,31 +4,37 @@
       <% include ../partials/scripts %>
     </head>
     <body>
-      <div id='menuContainer' class='animated fadeInDown'>
-        <% if (!login) { %>
-        <div id='create'>
-          <h1>Get Started</h1>
-      			<form action="/users" method="POST">
-      				<input type="text" name="username" placeholder="username">
+      <div id='background'>
+        <div id='overlay'>
+          <div id='menuContainer' class='animated fadeInDown'>
+            <% if (!login) { %>
+            <div id='create'>
+              <h1 id='start'>Get Started</h1>
               <br>
-      				<input type="text" name="email" placeholder="email">
-              <br>
-      				<input type="text" name="password" placeholder="password">
-              <br>
-      				<input type="submit">
-      			</form>
-          </div>
-          <div id='login'>
-            <h1>Log in</h1>
-      				<form action="/users/login" method="POST">
-      					<input type="text" name="email" placeholder="email">
+          			<form action="/users" method="POST">
+          				<input style='border:none' class='login' type="text" name="username" placeholder="username">
+                  <br>
+          				<input style='border:none' class='login' type="text" name="email" placeholder="email">
+                  <br>
+          				<input style='border:none' class='login' type="text" name="password" placeholder="password">
+                  <br>
+          				<button  class='loginButton' type="submit">Create</button>
+          			</form>
+              </div>
+              <div id='login'>
+                <h1 id='log'>Log in</h1>
                 <br>
-      					<input type="text" name="password" placeholder="password">
-                <br>
-      					<input type="submit">
-      				</form>
+          				<form action="/users/login" method="POST">
+          					<input style='border:none' class='login' type="text" name="email" placeholder="email">
+                    <br>
+          					<input style='border:none' class='login' type="text" name="password" placeholder="password">
+                    <br>
+          					<button style='border:none' class='loginButton' type="submit">Login</button>
+          				</form>
+              </div>
+              <% } %>
           </div>
-          <% } %>
+        </div>
       </div>
     </body>
   </html>

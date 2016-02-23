@@ -3,6 +3,8 @@
 * {
   font-family: 'Raleway', sans-serif;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 li {
@@ -24,9 +26,75 @@ ul {
 }*/
 
 #menuContainer {
-  margin-top: 10%;
+  margin-top: 250px;
+  color: white;
+  font-size: 1em;
+  /*background-color: rgba(0,0,0,0.7);*/
+  padding-top: 30px;
+  padding-bottom: 30px;
+
 }
 
 #showBody {
   margin-top: 5%;
+}
+
+#background {
+  position: absolute;
+  background-image: url('../images/login.jpg');
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  opacity: .9;
+}
+
+#overlay {
+  background-color: rgba(0,0,0,0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#create {
+  margin-bottom: 25px;
+}
+
+.login {
+  width: 220px;
+  height: 40px;
+  margin-bottom: 10px;
+  /*color: black;*/
+  background-color: rgba(0,0,0,0.4);
+  font-size: 14px;
+}
+
+#start {
+  background-color: rgba(0,0,0,0.9);
+  width: 220px;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#log {
+  background-color: rgba(0,0,0,0.9);
+  width: 220px;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.loginButton {
+  width: 150px;
+  height: 25px;
+}
+
+.login::-webkit-input-placeholder {
+  color: white;
+}
+
+.login:-moz-placeholder {
+  color: white;
 }
