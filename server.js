@@ -6,7 +6,7 @@ var express = require('express'),
     passport = require('passport'),
     session = require('express-session'),
     app = express(),
-    port = 3000 || process.env.PORT;
+    port = process.env.PORT || 3000;
 require('./config/passport')(passport);
 var mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/blog_app';
 mongoose.connect(mongoUri);
