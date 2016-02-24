@@ -39,7 +39,7 @@
 }
 
 #overlay {
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.5);
   position: absolute;
   top: 0;
   left: 0;
@@ -55,14 +55,14 @@
   width: 220px;
   height: 40px;
   margin-bottom: 10px;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0,0,0,0.2);
   font-size: 14px;
   color: white;
   text-align: center;
 }
 
 #start {
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.8);
   width: 250px;
   height: 50px;
   margin-left: auto;
@@ -71,7 +71,7 @@
 }
 
 #log {
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.8);
   width: 250px;
   height: 50px;
   margin-left: auto;
@@ -106,7 +106,6 @@
 
 #delete-button{
   width: 150px;
-  height: 25px;
   cursor: pointer;
   margin-top: 1em;
 }
@@ -114,6 +113,9 @@
 .editMe {
   visibility: hidden;
   position: relative;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 a {
@@ -231,4 +233,17 @@ li {
 
 .ospry:-moz-placeholder {
   color: white;
+}
+
+
+#editBox{
+  width: 100%;
+}
+
+#editTextBox{
+  width: 100%;
+}
+
+#updateButton {
+  width: 150px;
 }

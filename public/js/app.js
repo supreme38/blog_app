@@ -52,9 +52,10 @@ window.onload = function() {
         $('.editMe').addClass('animated fadeOut');
         setTimeout(function () {
         $('.editMe').removeClass('animated fadeOut');
+        $('.editMe').css('visibility', 'hidden');
         }, 1000);
         $('#editPost').addClass('off')
-        $('.editMe').css('visibility', 'hidden');
+
     }
   });
 
@@ -70,9 +71,10 @@ window.onload = function() {
         $('.deleteMe').addClass('animated fadeOut');
         setTimeout(function () {
         $('.deleteMe').removeClass('animated fadeOut');
+        $('.deleteMe').css('visibility', 'hidden');
         }, 1000);
         $('#deletePost').addClass('off')
-        $('.deleteMe').css('visibility', 'hidden');
+
     }
   });
 

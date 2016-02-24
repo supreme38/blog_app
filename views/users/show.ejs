@@ -35,6 +35,8 @@
     <div id='blogsContainer'>
     <% for (var i = user.blogs.length-1; i >=0; i--) { %>
         <img src='<%= user.blogs[i].imglink %>'>
+        <br>
+        <br>
         <p><%= user.blogs[i].comments %></p>
     </div>
     <div class='deleteMe'>
@@ -45,9 +47,9 @@
     </div>
     <div class='editMe'>
       <form action="/users/<%= user.id %>?_method=PUT" method="POST">
-      <input type="text" name="imglink" placeholder="IMG LINK">
-      <textarea name='comments' placeholder=COMMENTS></textarea>
-      <button>Update</button>
+      <input id='editBox' type="text" name="imglink" placeholder="IMG LINK">
+      <textarea id='editTextBox' name='comments' placeholder=COMMENTS></textarea>
+      <button id='updateButton'>Update</button>
     </div>
     <% } %>
   </body>
