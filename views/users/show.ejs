@@ -35,25 +35,25 @@
       <button id='cancel'>Cancel</button>
       </div>
     </div>
-    <div id='blogsContainer'>
+    <div class='blogsContainer'>
     <% for (var i = user.blogs.length-1; i >=0; i--) { %>
-        <img src='<%= user.blogs[i].imglink %>'>
+        <img class='blogImageSize' src='<%= user.blogs[i].imglink %>'>
         <br>
         <br>
         <p><%= user.blogs[i].comments %></p>
     </div>
-    <div id='optionsContainer'>
+    <div class='optionsContainer'>
       <div class='deleteMe'>
         <form action="/users/<%= user.id %>/newblog?_method=DELETE" method="POST">
         <input type="hidden" name="blogs_id" value="<%=user.blogs[i].id%>"/>
-        <button id="delete-button">Delete</button>
+        <button class="delete-button">Delete</button>
         </form>
       </div>
       <div class='editMe'>
         <form action="/users/<%= user.id %>?_method=PUT" method="POST">
-        <input id='editBox' type="text" name="imglink" value='<%user.blogs[i].imglink%>'>
-        <textarea id='editTextBox' name='comments' value='<%user.blogs[i].comments%>'></textarea>
-        <button id='updateButton'>Update</button>
+        <input class='editBox' type="text" name="imglink" value='<%=user.blogs[i].imglink%>'>
+        <textarea class='editTextBox' name='comments' value='<%=user.blogs[i].comments%>'></textarea>
+        <button class='updateButton'>Update</button>
       </div>
     </div>
     <% } %>

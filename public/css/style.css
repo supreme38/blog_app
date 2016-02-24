@@ -17,11 +17,12 @@
   padding: 0;
 }
 
-#optionsContainer {
+.optionsContainer {
   position: relative;
-  left: 520px;
-  bottom: 550px;
+  left: 30%;
+  top: -50%;
   z-index: 0;
+  overflow:hidden;
 }
 
 #menuContainer {
@@ -109,13 +110,12 @@
 
 .deleteMe {
   visibility: hidden;
-  margin-bottom: 2%;
+  /*margin-bottom: 1%;*/
 }
 
-#delete-button{
+.delete-button{
   width: 150px;
   cursor: pointer;
-  margin-top: 1em;
 }
 
 .editMe {
@@ -247,18 +247,18 @@ li {
   color: white;
 }
 
-#editBox{
+.editBox{
   width: 100%;
 }
 
-#editTextBox{
+.editTextBox{
   width: 100%;
-  height: 15%;
-  margin-top: 10%;
-  margin-bottom: 5%;
+  height: 5%;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 
-#updateButton {
+.updateButton {
   width: 150px;
 }
 
@@ -285,4 +285,9 @@ li {
    display: inline-block;
    float: left
    clear: both;
+}
+
+.blogImageSize {
+  max-width: 500px;
+  max-height: 800px;
 }
