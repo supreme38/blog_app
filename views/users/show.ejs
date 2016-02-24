@@ -4,40 +4,51 @@
     <% include ../partials/scripts %>
   </head>
   <body id='showBody' class='animated fadeInDown'>
+    <h1 id='username'><%= user.username %>'s Blog</h1>
     <div id='navContainer'>
-      <h2 id='appName'>Blah Blog </h2>
-      <div id='trend'><a href='/blogs'>See what's trending</a></div>
-      <div id='logout'><a href='/users/logout'>Logout</a></div>
-      <div id='formContainer'>
-        <% if (usertrue)  { %>
-          <h4>ADD NEW FIT</h4>
-          <form id="up-form">
-            <input class='button' type="file">
-            <button class='button' type="submit">Upload File</button>
-          </form>
-          <form action="/users/<%= user.id %>/newblog" method="POST">
-            <input class='ospry' type="text" name="imglink" placeholder="UPLOAD IMAGE">
-            <textarea class='textbox' name='comments' placeholder=COMMENTS></textarea>
-            <button class='button'type="submit">Submit
-          </form>
+      <ul>
+        <li id='trending'><a href='/blogs'>TRENDING</a></li>
+        <% if (usertrue) { %>
+        <li id='newPost'>NEW POST</li>
+        <li id='editPost' class='off'>EDIT POST</li>
+        <li id='deletePost' class='off'>DELETE POST</li>
+        <li id='logmeout'><a href='/users/logout'>LOGOUT</a></li>
         <% } %>
+      </ul>
+      <div id='border'></div>
+    </div>
+    <div id='postContainer'>
+      <div id='containThis'>
+      <form id="up-form">
+        <input class='uploadButton' type="file">
+        <br>
+        <button class='button' type="submit">Click To Upload</button>
+      </form>
+      <form id ='posting' action="/users/<%= user.id %>/newblog" method="POST">
+        <input style='border:none' class='ospry' type="text" name="imglink" placeholder="Please Wait......">
+        <textarea style='border:none' class='textbox' name='comments' placeholder=COMMENTS:></textarea>
+        <button class='button'type="submit">Submit
+      </form>
+      <button id='cancel'>Cancel</button>
       </div>
     </div>
     <div id='blogsContainer'>
-        <% for (var i = user.blogs.length-1; i >=0; i--) { %>
+    <% for (var i = user.blogs.length-1; i >=0; i--) { %>
         <img src='<%= user.blogs[i].imglink %>'>
-            <p><%= user.blogs[i].comments %></p>
-        <% if (usertrue) { %>
-          <div id='delete'><form action="/users/<%= user.id %>/newblog?_method=DELETE" method="POST">
-            <input type="hidden" name="blogs_id" value="<%=user.blogs[i].id%>"/>
-              <button class='button' id="delete-button">Delete</button>
-            </form>
-          </div>
-            <!-- <a href='/users/<%= user.blogs[i] %>/edit>'>Edit</a> -->
-        <% } %>
-      <% } %>
+        <p><%= user.blogs[i].comments %></p>
     </div>
-    <div class='rig'>
+    <div class='deleteMe'>
+      <form action="/users/<%= user.id %>/newblog?_method=DELETE" method="POST">
+      <input type="hidden" name="blogs_id" value="<%=user.blogs[i].id%>"/>
+      <button id="delete-button">Delete</button>
+      </form>
     </div>
-    </body>
+    <div class='editMe'>
+      <form action="/users/<%= user.id %>?_method=PUT" method="POST">
+      <input type="text" name="imglink" placeholder="IMG LINK">
+      <textarea name='comments' placeholder=COMMENTS></textarea>
+      <button>Update</button>
+    </div>
+    <% } %>
+  </body>
 </html>
