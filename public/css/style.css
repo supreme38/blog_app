@@ -22,7 +22,6 @@
   left: 30%;
   top: -50%;
   z-index: 0;
-  overflow:hidden;
 }
 
 #menuContainer {
@@ -247,6 +246,7 @@ li {
   color: white;
 }
 
+
 .editBox{
   width: 100%;
 }
@@ -280,7 +280,7 @@ li {
 }
 
 .blogImage {
-   max-width: 300px;
+   max-width: 330px;
    max-height: 700px;
    display: inline-block;
    float: left

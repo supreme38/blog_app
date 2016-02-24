@@ -59,6 +59,7 @@ router.post('/:id/newblog', function(req, res) {
 // UPDATE
 router.put('/:id', function(req, res){
   User.findByIdAndUpdate(req.params.id, req.body, function(err, user){
+    console.log(req.body)
     res.redirect('/users');
   });
 });

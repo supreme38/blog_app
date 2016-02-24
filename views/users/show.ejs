@@ -29,7 +29,7 @@
       </form>
       <form id ='posting' action="/users/<%= user.id %>/newblog" method="POST">
         <input style='border:none' class='ospry' type="text" name="imglink" placeholder="Please Wait......">
-        <textarea style='border:none' class='textbox' name='comments' placeholder=COMMENTS:></textarea>
+        <textarea  class='textbox' name='comments' placeholder='COMMENTS:'></textarea>
         <button class='button'type="submit">Submit
       </form>
       <button id='cancel'>Cancel</button>
@@ -51,9 +51,11 @@
       </div>
       <div class='editMe'>
         <form action="/users/<%= user.id %>?_method=PUT" method="POST">
-        <input class='editBox' type="text" name="imglink" value='<%=user.blogs[i].imglink%>'>
-        <textarea class='editTextBox' name='comments' value='<%=user.blogs[i].comments%>'></textarea>
-        <button class='updateButton'>Update</button>
+          <input class='editBox' type="text" name="imglink" value='<%= user.blogs[i].imglink %>'>
+          <textarea class='editTextBox' name='comments'  value='<%= user.blogs[i].comments %>'><%= user.blogs[i].comments %></textarea>
+          <input type="hidden" name="update_id" value="<%=user.blogs[i].id%>"/>
+          <button class='updateButton'>Update</button>
+        </form>
       </div>
     </div>
     <% } %>
