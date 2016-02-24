@@ -55,14 +55,14 @@
   width: 220px;
   height: 40px;
   margin-bottom: 10px;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0.5);
   font-size: 14px;
   color: white;
   text-align: center;
 }
 
 #start {
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.9);
   width: 250px;
   height: 50px;
   margin-left: auto;
@@ -71,7 +71,7 @@
 }
 
 #log {
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.9);
   width: 250px;
   height: 50px;
   margin-left: auto;
@@ -235,7 +235,6 @@ li {
   color: white;
 }
 
-
 #editBox{
   width: 100%;
 }
@@ -246,4 +245,30 @@ li {
 
 #updateButton {
   width: 150px;
+}
+
+#wT {
+  text-align: left;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-left: 5%
+}
+
+#wTmenu {
+  text-align: center;
+}
+
+
+#indexContainer {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blogImage {
+   max-width: 300px;
+   max-height: 700px;
+   display: inline-block;
+   float: left
+   clear: both;
 }

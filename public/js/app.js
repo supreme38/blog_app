@@ -6,7 +6,7 @@ window.onload = function() {
     ospry.get({
       url: metadata.url,
       maxHeight: 800,
-      maxWidth: 400,
+      maxWidth: 500,
       imageReady: function(err, metadata) {
         // convert metadata (an object) into a string src link using .src
         var obj = metadata.src
@@ -24,6 +24,22 @@ window.onload = function() {
     });
   });
 
+  // Add animnations when clicked
+  $('#homelink').hover(function(){
+      $('#homelink').addClass('animated fadeIn');
+      setTimeout(function () {
+        $('#homelink').removeClass('animated fadeIn');
+      }, 1000);
+    });
+
+  $('#wTlogout').hover(function(){
+    $('#wTlogout').addClass('animated fadeIn');
+    setTimeout(function () {
+      $('#wTlogout').removeClass('animated fadeIn');
+      }, 1000);
+  });
+
+  // Add animnations when clicked
   $('#newPost').click(function(){
       $('#postContainer').addClass('animated fadeIn');
       setTimeout(function () {
@@ -40,6 +56,7 @@ window.onload = function() {
       }, 1000);
   });
 
+  // Add animnations when clicked
   $('#editPost').click(function(){
     if($('#editPost').hasClass('off')){
       $('.editMe').addClass('animated fadeIn');
@@ -55,10 +72,10 @@ window.onload = function() {
         $('.editMe').css('visibility', 'hidden');
         }, 1000);
         $('#editPost').addClass('off')
-
     }
   });
 
+  // Add animnations when clicked
   $('#deletePost').click(function(){
     if($('#deletePost').hasClass('off')){
       $('.deleteMe').addClass('animated fadeIn');
@@ -74,10 +91,10 @@ window.onload = function() {
         $('.deleteMe').css('visibility', 'hidden');
         }, 1000);
         $('#deletePost').addClass('off')
-
     }
   });
 
+  // Add animnations when hover
   $('#trending').hover(function(){
     $('#trending').addClass('animated pulse');
     setTimeout(function () {
@@ -85,6 +102,7 @@ window.onload = function() {
       }, 1000);
   });
 
+  // Add animnations when hover
   $('#logmeout').hover(function(){
     $('#logmeout').addClass('animated pulse');
     setTimeout(function () {
@@ -92,6 +110,7 @@ window.onload = function() {
       }, 1000);
   });
 
+  // Add animnations when hover
   $('#newPost').hover(function(){
     $('#newPost').addClass('animated pulse');
     setTimeout(function () {
@@ -99,6 +118,7 @@ window.onload = function() {
       }, 1000);
   });
 
+  // Add animnations when hover
   $('#editPost').hover(function(){
     $('#editPost').addClass('animated pulse');
     setTimeout(function () {
@@ -106,6 +126,7 @@ window.onload = function() {
       }, 1000);
   });
 
+  // Add animnations when hover
   $('#deletePost').hover(function(){
     $('#deletePost').addClass('animated pulse');
     setTimeout(function () {
