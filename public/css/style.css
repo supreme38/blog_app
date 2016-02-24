@@ -17,10 +17,17 @@
   padding: 0;
 }
 
+#optionsContainer {
+  position: relative;
+  left: 520px;
+  bottom: 550px;
+  z-index: 0;
+}
+
 #menuContainer {
-  margin-top: 15%;
+  margin-top: 10%;
   color: white;
-  font-size: 1em;
+  font-size: 12px;
   text-align: center;
 }
 
@@ -56,7 +63,7 @@
   height: 40px;
   margin-bottom: 10px;
   background-color: rgba(0,0,0,0.5);
-  font-size: 14px;
+  font-size: 10px;
   color: white;
   text-align: center;
 }
@@ -64,7 +71,7 @@
 #start {
   background-color: rgba(0,0,0,0.9);
   width: 250px;
-  height: 50px;
+  height: 40px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 10px;
@@ -73,7 +80,7 @@
 #log {
   background-color: rgba(0,0,0,0.9);
   width: 250px;
-  height: 50px;
+  height: 40px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 10px;
@@ -102,6 +109,7 @@
 
 .deleteMe {
   visibility: hidden;
+  margin-bottom: 2%;
 }
 
 #delete-button{
@@ -156,8 +164,10 @@ li {
   top: 0px;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(0,0,0,0.8);
   text-align: center;
+  padding-bottom: 100px;
+  z-index: 1
 }
 
 #up-form {
@@ -170,7 +180,7 @@ li {
   width: 220px;
   height: 40px;
   margin-bottom: 10px;
-  font-size: 14px;
+  font-size: 10px;
   text-align: center;
   cursor: pointer;
 }
@@ -179,7 +189,7 @@ li {
   width: 220px;
   height: 40px;
   margin-bottom: 10px;
-  font-size: 14px;
+  font-size: 10px;
   text-align: center;
   cursor: pointer;
 }
@@ -188,7 +198,7 @@ li {
   width: 220px;
   height: 40px;
   margin-bottom: 10px;
-  font-size: 14px;
+  font-size: 10px;
   text-align: center;
   cursor: pointer;
 }
@@ -203,8 +213,8 @@ li {
   width: 500px;
   height: 400px;
   margin-bottom: 10px;
-  background-color: rgba(225,225,225, 0.1);
-  font-size: 14px;
+  background-color: rgba(0,0,0, 0.5);
+  font-size: 12px;
   color: white;
   text-align: left;
 }
@@ -213,14 +223,16 @@ li {
   width: 220px;
   height: 40px;
   margin-bottom: 10px;
-  background-color: rgba(225,225,225, 0.1);
-  font-size: 14px;
+  background-color: rgba(0,0,0, 0.5);
+  font-size: 12px;
   color: white;
   text-align: center;
 }
 
 .textbox::-webkit-input-placeholder {
   color: white;
+  text-align: center;
+  padding-top: 15%;
 }
 
 .textbox:-moz-placeholder {
@@ -241,6 +253,9 @@ li {
 
 #editTextBox{
   width: 100%;
+  height: 15%;
+  margin-top: 10%;
+  margin-bottom: 5%;
 }
 
 #updateButton {
@@ -257,7 +272,6 @@ li {
 #wTmenu {
   text-align: center;
 }
-
 
 #indexContainer {
   width: 80%;

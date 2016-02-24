@@ -8,12 +8,15 @@
     <div id='navContainer'>
       <ul>
         <li id='trending'><a href='/blogs'>TRENDING</a></li>
+        <% if (!usertrue) { %>
+        <li><a href='/users'>HOME</a></li>
+        <% } %>
         <% if (usertrue) { %>
         <li id='newPost'>NEW POST</li>
         <li id='editPost' class='off'>EDIT POST</li>
         <li id='deletePost' class='off'>DELETE POST</li>
-        <li id='logmeout'><a href='/users/logout'>LOGOUT</a></li>
         <% } %>
+        <li id='logmeout'><a href='/users/logout'>LOGOUT</a></li>
       </ul>
       <div id='border'></div>
     </div>
@@ -39,17 +42,19 @@
         <br>
         <p><%= user.blogs[i].comments %></p>
     </div>
-    <div class='deleteMe'>
-      <form action="/users/<%= user.id %>/newblog?_method=DELETE" method="POST">
-      <input type="hidden" name="blogs_id" value="<%=user.blogs[i].id%>"/>
-      <button id="delete-button">Delete</button>
-      </form>
-    </div>
-    <div class='editMe'>
-      <form action="/users/<%= user.id %>?_method=PUT" method="POST">
-      <input id='editBox' type="text" name="imglink" placeholder="IMG LINK">
-      <textarea id='editTextBox' name='comments' placeholder=COMMENTS></textarea>
-      <button id='updateButton'>Update</button>
+    <div id='optionsContainer'>
+      <div class='deleteMe'>
+        <form action="/users/<%= user.id %>/newblog?_method=DELETE" method="POST">
+        <input type="hidden" name="blogs_id" value="<%=user.blogs[i].id%>"/>
+        <button id="delete-button">Delete</button>
+        </form>
+      </div>
+      <div class='editMe'>
+        <form action="/users/<%= user.id %>?_method=PUT" method="POST">
+        <input id='editBox' type="text" name="imglink" value='<%user.blogs[i].imglink%>'>
+        <textarea id='editTextBox' name='comments' value='<%user.blogs[i].comments%>'></textarea>
+        <button id='updateButton'>Update</button>
+      </div>
     </div>
     <% } %>
   </body>

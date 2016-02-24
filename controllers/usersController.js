@@ -21,7 +21,6 @@ router.get('/:id/json', function(req, res) {
 	});
 });
 
-
 // INDEX
 router.get('/', redirectUser, function(req, res) {
 	res.locals.login = req.isAuthenticated();
@@ -44,7 +43,6 @@ router.get('/:id', isLoggedIn, function(req, res) {
 	});
 });
 
-
 // POST
 router.post('/:id/newblog', function(req, res) {
   User.findById(req.params.id, function(err, user) {
@@ -56,6 +54,13 @@ router.post('/:id/newblog', function(req, res) {
 			});
 		});
 	});
+});
+
+// UPDATE
+router.put('/:id', function(req, res){
+  User.findByIdAndUpdate(req.params.id, req.body, function(err, user){
+    res.redirect('/users');
+  });
 });
 
 // DELETE
@@ -71,14 +76,6 @@ router.delete('/:id/newblog', function(req, res){
      res.redirect('/users/');
    });
  });
-});
-
-// EDIT
-router.get('/:id/edit', function(req, res){
-  User.findById(req.params.id, function(err, user){
-
-    res.render('users/edit.ejs',user);
-  });
 });
 
 // CREATE - LOGIN

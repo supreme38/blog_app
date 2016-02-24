@@ -96,41 +96,41 @@ window.onload = function() {
 
   // Add animnations when hover
   $('#trending').hover(function(){
-    $('#trending').addClass('animated pulse');
+    $('#trending').addClass('animated fadeIn');
     setTimeout(function () {
-      $('#trending').removeClass('animated pulse');
+      $('#trending').removeClass('animated fadeIn');
       }, 1000);
   });
 
   // Add animnations when hover
   $('#logmeout').hover(function(){
-    $('#logmeout').addClass('animated pulse');
+    $('#logmeout').addClass('animated fadeIn');
     setTimeout(function () {
-      $('#logmeout').removeClass('animated pulse');
+      $('#logmeout').removeClass('animated fadeIn');
       }, 1000);
   });
 
   // Add animnations when hover
   $('#newPost').hover(function(){
-    $('#newPost').addClass('animated pulse');
+    $('#newPost').addClass('animated fadeIn');
     setTimeout(function () {
-      $('#newPost').removeClass('animated pulse');
+      $('#newPost').removeClass('animated fadeIn');
       }, 1000);
   });
 
   // Add animnations when hover
   $('#editPost').hover(function(){
-    $('#editPost').addClass('animated pulse');
+    $('#editPost').addClass('animated fadeIn');
     setTimeout(function () {
-      $('#editPost').removeClass('animated pulse');
+      $('#editPost').removeClass('animated fadeIn');
       }, 1000);
   });
 
   // Add animnations when hover
   $('#deletePost').hover(function(){
-    $('#deletePost').addClass('animated pulse');
+    $('#deletePost').addClass('animated fadeIn');
     setTimeout(function () {
-      $('#deletePost').removeClass('animated pulse');
+      $('#deletePost').removeClass('animated fadeIn');
       }, 1000);
   });
 };
