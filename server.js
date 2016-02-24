@@ -9,6 +9,7 @@ var express = require('express'),
     port = 3000 || process.env.PORT;
 require('./config/passport')(passport);
 var mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/blog_app';
+mongoose.connect(mongoUri);
 
 // CONTROLLERS
 usersController = require('./controllers/usersController');
@@ -35,4 +36,3 @@ mongoose.connect('mongodb://localhost:27017/blog_app');
 app.listen(port, function() {
     console.log('LISTEN TO ME ON PORT ' + port);
 });
-mongoose.connect(mongoUri);
