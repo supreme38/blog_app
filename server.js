@@ -32,7 +32,8 @@ app.get('/', function(req, res){
 });
 
 // CONNECT & LISTEN
-mongoose.connect('mongodb://localhost:27017/blog_app');
-app.listen(port, function() {
-    console.log('LISTEN TO ME ON PORT ' + port);
+mongoose.connection.once('open', function() {
+  app.listen(port, function() {
+      console.log('LISTEN TO ME ON PORT ' + port);
+  });
 });
