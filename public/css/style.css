@@ -117,13 +117,13 @@
   cursor: pointer;
 }
 
-/*.editMe {
+.editMe {
   visibility: hidden;
-  position: relative;
+  /*position: relative;*/
   width: 400px;
   margin-left: auto;
   margin-right: auto;
-}*/
+}
 
 a {
   text-decoration: none;
