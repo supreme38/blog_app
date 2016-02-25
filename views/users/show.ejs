@@ -61,7 +61,6 @@
       </div>
       <div class='editMe'>
         <form action="/users/<%= user.id %>?_method=PUT" method="POST">
-          <input class='editBox' type="text" name="imglink" value='<%= user.blogs[i].imglink %>'>
           <textarea class='editTextBox' name='comments'  value='<%= user.blogs[i].comments %>'><%= user.blogs[i].comments %></textarea>
           <input type="hidden" name="update_id" value="<%= user.blogs[i].id %>"/>
           <button class='updateButton'>Update</button>
