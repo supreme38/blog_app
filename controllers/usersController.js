@@ -50,7 +50,7 @@ router.post('/:id/newblog', function(req, res) {
 		blog.save(function(err, blog) {
 			user.blogs.push(blog);
 			user.save(function(err, user) {
-				res.redirect('/users/' + req.params.id);
+				res.redirect('/users');
 			});
 		});
 	});
@@ -58,11 +58,10 @@ router.post('/:id/newblog', function(req, res) {
 
 // UPDATE
 router.put('/:id', function(req, res){
-  User.findByIdAndUpdate(req.params.id, req.body, function(err, user){
-    console.log(req.body)
+  User.update({_id: req.params.id, 'blogs._id': req.body.update_id}, {$set: {'blogs.$.comments': req.body.comments}}, function(err) {
     res.redirect('/users');
+    });
   });
-});
 
 // DELETE
 router.delete('/:id/newblog', function(req, res){
