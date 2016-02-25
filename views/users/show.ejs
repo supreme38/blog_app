@@ -42,6 +42,7 @@
       </div>
     </div>
     <!-- Display blog post from the newest by looping from the end -->
+    <div class='bigC'>
     <div class='blogsContainer'>
     <% for (var i = user.blogs.length-1; i >=0; i--) { %>
         <img class='blogImageSize' src='<%= user.blogs[i].imglink %>'>
@@ -68,5 +69,6 @@
       </div>
     </div>
     <% } %>
+  </div>
   </body>
 </html>

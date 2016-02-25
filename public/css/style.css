@@ -17,18 +17,28 @@
   padding: 0;
 }
 
-/*.optionsContainer {
-  position: relative;
-  left: 30%;
-  top: -50%;
-  z-index: 0;
+/*.bigC{
+  width: 100%
 }*/
+
+.blogsContainer {
+  text-align: center;
+  display: block;
+}
+
+.optionsContainer {
+  z-index: 0;
+  position: relative;
+  left: 525px;
+  bottom: 200px;
+}
 
 #menuContainer {
   margin-top: 10%;
   color: white;
   font-size: 12px;
   text-align: center;
+  clear: both;
 }
 
 #showBody {
