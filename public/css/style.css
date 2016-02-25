@@ -17,12 +17,12 @@
   padding: 0;
 }
 
-.optionsContainer {
+/*.optionsContainer {
   position: relative;
   left: 30%;
   top: -50%;
   z-index: 0;
-}
+}*/
 
 #menuContainer {
   margin-top: 10%;
@@ -119,7 +119,6 @@
 
 .editMe {
   visibility: hidden;
-  /*position: relative;*/
   width: 400px;
   margin-left: auto;
   margin-right: auto;
