@@ -3,14 +3,18 @@
     <title>LOGIN</title>
     <% include ../partials/scripts %>
   </head>
+    <!-- All the follow ids are for CSS -->
     <body id='loginIndex'>
       <div id='background'>
         <div id='overlay'>
           <div id='menuContainer' class='animated fadeInDown'>
+          <!-- If user is not logged in, it will redirect to login page -->
+          <!-- If user is logged in, user will be routed to homepage on this page -->
           <% if (!login) { %>
             <div id='create'>
               <h1 id='start'>Get Started</h1>
               <br>
+              <!-- Form to create account -->
               <form action="/users" method="POST">
                 <input style='border:none' class='login' type="text" name="username" placeholder="username">
                 <br>
@@ -24,6 +28,7 @@
             <div id='login'>
             <h1 id='log'>Log In</h1>
             <br>
+              <!-- For to log in -->
               <form action="/users/login" method="POST">
                 <input style='border:none' class='login' type="text" name="email" placeholder="email">
                 <br>

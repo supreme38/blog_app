@@ -36,6 +36,7 @@ router.get('/logout', function(req, res) {
 });
 
 // SHOW
+// If user is logged in, it will render show.ejs
 router.get('/:id', isLoggedIn, function(req, res) {
   req.params.id == req.user.id ? res.locals.usertrue = true : res.locals.usertrue = false;
   User.findById(req.params.id, function(err, user) {
@@ -44,6 +45,8 @@ router.get('/:id', isLoggedIn, function(req, res) {
 });
 
 // POST
+// Find req.body and pushes the object into blogs schema
+// Redirects to /users which redirects to /user/:id
 router.post('/:id/newblog', function(req, res) {
   User.findById(req.params.id, function(err, user) {
 		var blog = new Blog(req.body);
@@ -57,6 +60,7 @@ router.post('/:id/newblog', function(req, res) {
 });
 
 // UPDATE
+// Looks for the user id, then object id then updates blogs.comments with the object from req.body
 router.put('/:id', function(req, res){
   User.update({_id: req.params.id, 'blogs._id': req.body.update_id}, {$set: {'blogs.$.comments': req.body.comments}}, function(err) {
     res.redirect('/users');
@@ -64,6 +68,7 @@ router.put('/:id', function(req, res){
   });
 
 // DELETE
+// Looks for the blog id and deletes it
 router.delete('/:id/newblog', function(req, res){
   User.findById(req.params.id, function(err,user){
     user.blogs.forEach(function(blog) {
@@ -78,7 +83,7 @@ router.delete('/:id/newblog', function(req, res){
  });
 });
 
-// CREATE - LOGIN
+// CREATE LOGIN
 router.post('/', passport.authenticate('local-signup', {
 	failureRedirect: '/users' }), function(req, res) {
     res.redirect('/users/' + req.user.id);
@@ -91,7 +96,8 @@ router.post('/login', passport.authenticate('local-login', {
 });
 
 
-// MIDDLEWARE - LOGIN STATUS
+// MIDDLEWARE
+// LOGIN STATUS
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
   	return next();
@@ -100,7 +106,8 @@ function isLoggedIn(req, res, next) {
   };
 };
 
-// MIDDLEWARE - REDIRECT INDEX TO SHOW
+// MIDDLEWARE
+// REDIRECT INDEX TO SHOW
 function redirectUser(req, res, next) {
   if (req.isAuthenticated())
   res.redirect('/users/' + req.user.id);

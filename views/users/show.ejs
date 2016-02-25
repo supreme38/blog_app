@@ -1,13 +1,16 @@
 <html>
   <head>
-    <title>HOMEPAGE</title>
+    <title>HOME</title>
     <% include ../partials/scripts %>
   </head>
+  <!-- Animation for the body -->
   <body id='showBody' class='animated fadeInDown'>
+    <!-- Displaying usersname -->
     <h1 id='username'><%= user.username %>'s Blog</h1>
     <div id='navContainer'>
       <ul>
         <li id='trending'><a href='/blogs'>TRENDING</a></li>
+        <!-- If user is at their homepage, it will show the following -->
         <% if (!usertrue) { %>
         <li><a href='/users'>HOME</a></li>
         <% } %>
@@ -20,13 +23,16 @@
       </ul>
       <div id='border'></div>
     </div>
+    <!-- Currently postContainer is hidden. Will be visible when clicked on -->
     <div id='postContainer'>
       <div id='containThis'>
+      <!-- Ospry upload image API form-->
       <form id="up-form">
         <input class='uploadButton' type="file">
         <br>
         <button class='button' type="submit">Click To Upload</button>
       </form>
+      <!-- Post form-->
       <form id ='posting' action="/users/<%= user.id %>/newblog" method="POST">
         <input style='border:none' class='ospry' type="text" name="imglink" placeholder="Please Wait......">
         <textarea  class='textbox' name='comments' placeholder='COMMENTS:'></textarea>
@@ -35,6 +41,7 @@
       <button id='cancel'>Cancel</button>
       </div>
     </div>
+    <!-- Display blog post from the newest by looping from the end -->
     <div class='blogsContainer'>
     <% for (var i = user.blogs.length-1; i >=0; i--) { %>
         <img class='blogImageSize' src='<%= user.blogs[i].imglink %>'>
@@ -42,10 +49,12 @@
         <br>
         <p><%= user.blogs[i].comments %></p>
     </div>
+    <!-- optionsContainer contains edit and delete options -->
+    <!-- Hidden until user clicks on Edit Post or Delete -->
     <div class='optionsContainer'>
       <div class='deleteMe'>
         <form action="/users/<%= user.id %>/newblog?_method=DELETE" method="POST">
-        <input type="hidden" name="blogs_id" value="<%=user.blogs[i].id%>"/>
+        <input type="hidden" name="blogs_id" value="<%= user.blogs[i].id %>"/>
         <button class="delete-button">Delete</button>
         </form>
       </div>
@@ -53,7 +62,7 @@
         <form action="/users/<%= user.id %>?_method=PUT" method="POST">
           <input class='editBox' type="text" name="imglink" value='<%= user.blogs[i].imglink %>'>
           <textarea class='editTextBox' name='comments'  value='<%= user.blogs[i].comments %>'><%= user.blogs[i].comments %></textarea>
-          <input type="hidden" name="update_id" value="<%= user.blogs[i].id%>"/>
+          <input type="hidden" name="update_id" value="<%= user.blogs[i].id %>"/>
           <button class='updateButton'>Update</button>
         </form>
       </div>

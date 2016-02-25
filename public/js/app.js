@@ -8,9 +8,8 @@ window.onload = function() {
       maxHeight: 800,
       maxWidth: 500,
       imageReady: function(err, metadata) {
-        // convert metadata (an object) into a string src link using .src
+        // Convert metadata (an object) into a string src link using .src
         var obj = metadata.src
-        // console.log(obj);
         $('.ospry').val(obj);
       },
     });
@@ -24,7 +23,11 @@ window.onload = function() {
     });
   });
 
-  // Add animnations when clicked
+  // The following will add animations to certain divs or id when hovered
+  // over or clicked. It will add the class which tiggers the animations
+  // Then it will remove the class so the you can do it all over again
+
+  // Animnations to HOME when hovered
   $('#homelink').hover(function(){
       $('#homelink').addClass('animated fadeIn');
       setTimeout(function () {
@@ -32,6 +35,7 @@ window.onload = function() {
       }, 1000);
     });
 
+  // Animations for LOGOUT when hovered
   $('#wTlogout').hover(function(){
     $('#wTlogout').addClass('animated fadeIn');
     setTimeout(function () {
@@ -39,7 +43,7 @@ window.onload = function() {
       }, 1000);
   });
 
-  // Add animnations when clicked
+  // Animnations to NEW POST when clicked and changes its visibility
   $('#newPost').click(function(){
       $('#postContainer').addClass('animated fadeIn');
       setTimeout(function () {
@@ -48,6 +52,7 @@ window.onload = function() {
       $('#postContainer').css('visibility', 'visible');
     });
 
+  // Animations to CANCEL when clicked and changes the visibility of the NEW POST div
   $('#cancel').click(function(){
     $('#postContainer').addClass('animated fadeOut');
     setTimeout(function () {
@@ -56,7 +61,7 @@ window.onload = function() {
       }, 1000);
   });
 
-  // Add animnations when clicked
+  // Animnations to EDIT POST when clicked and changes visibility
   $('#editPost').click(function(){
     if($('#editPost').hasClass('off')){
       $('.editMe').addClass('animated fadeIn');
@@ -64,18 +69,18 @@ window.onload = function() {
         $('.editMe').removeClass('animated fadeIn');
         }, 1000);
         $('.editMe').css('visibility', 'visible');
-        $('#editPost').removeClass('off')
+        $('#editPost').removeClass('off');
     } else {
         $('.editMe').addClass('animated fadeOut');
         setTimeout(function () {
-        $('.editMe').removeClass('animated fadeOut');
-        $('.editMe').css('visibility', 'hidden');
-        }, 1000);
-        $('#editPost').addClass('off')
-    }
+          $('.editMe').removeClass('animated fadeOut');
+          $('.editMe').css('visibility', 'hidden');
+          }, 1000);
+          $('#editPost').addClass('off');
+    };
   });
 
-  // Add animnations when clicked
+  // Animnations to DELETE when clicked and changes visibility
   $('#deletePost').click(function(){
     if($('#deletePost').hasClass('off')){
       $('.deleteMe').addClass('animated fadeIn');
@@ -83,18 +88,18 @@ window.onload = function() {
         $('.deleteMe').removeClass('animated fadeIn');
         }, 1000);
         $('.deleteMe').css('visibility', 'visible');
-        $('#deletePost').removeClass('off')
+        $('#deletePost').removeClass('off');
     } else {
-        $('.deleteMe').addClass('animated fadeOut');
+      $('.deleteMe').addClass('animated fadeOut');
         setTimeout(function () {
-        $('.deleteMe').removeClass('animated fadeOut');
-        $('.deleteMe').css('visibility', 'hidden');
-        }, 1000);
-        $('#deletePost').addClass('off')
-    }
+          $('.deleteMe').removeClass('animated fadeOut');
+          $('.deleteMe').css('visibility', 'hidden');
+          }, 1000);
+          $('#deletePost').addClass('off');
+    };
   });
 
-  // Add animnations when hover
+  // Animations to trending when hovered
   $('#trending').hover(function(){
     $('#trending').addClass('animated fadeIn');
     setTimeout(function () {
@@ -102,7 +107,7 @@ window.onload = function() {
       }, 1000);
   });
 
-  // Add animnations when hover
+  // Animations to LOGOUT when hovered
   $('#logmeout').hover(function(){
     $('#logmeout').addClass('animated fadeIn');
     setTimeout(function () {
@@ -110,7 +115,7 @@ window.onload = function() {
       }, 1000);
   });
 
-  // Add animnations when hover
+  // Animations to NEW POST when hovered
   $('#newPost').hover(function(){
     $('#newPost').addClass('animated fadeIn');
     setTimeout(function () {
@@ -118,7 +123,7 @@ window.onload = function() {
       }, 1000);
   });
 
-  // Add animnations when hover
+  // Animations to EDIT POST when hovered
   $('#editPost').hover(function(){
     $('#editPost').addClass('animated fadeIn');
     setTimeout(function () {
@@ -126,11 +131,12 @@ window.onload = function() {
       }, 1000);
   });
 
-  // Add animnations when hover
+  // Animations to DELETE post when hovered
   $('#deletePost').hover(function(){
     $('#deletePost').addClass('animated fadeIn');
     setTimeout(function () {
       $('#deletePost').removeClass('animated fadeIn');
       }, 1000);
   });
+
 };

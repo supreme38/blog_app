@@ -1,4 +1,4 @@
-/* Here lies my CSS */
+/* CSS for all HTML */
 @font-face {
     font-family: 'MyFont';
     src: url('../fonts/Pangram-ExtraLight.otf');
@@ -112,7 +112,7 @@
   /*margin-bottom: 1%;*/
 }
 
-.delete-button{
+.delete-button {
   width: 150px;
   cursor: pointer;
 }
@@ -145,8 +145,8 @@ li {
   margin-left: auto;
   margin-top: 2%;
   margin-bottom: 5%;
-
 }
+
 #postContainer {
   visibility: hidden;
 }
@@ -184,7 +184,7 @@ li {
   cursor: pointer;
 }
 
-.uploadButton{
+.uploadButton {
   width: 220px;
   height: 40px;
   margin-bottom: 10px;
@@ -246,12 +246,11 @@ li {
   color: white;
 }
 
-
-.editBox{
+.editBox {
   width: 100%;
 }
 
-.editTextBox{
+.editTextBox {
   width: 100%;
   height: 5%;
   margin-top: 1%;
