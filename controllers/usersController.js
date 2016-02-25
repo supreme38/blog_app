@@ -72,7 +72,7 @@ router.put('/:id', function(req, res){
 router.delete('/:id/newblog', function(req, res){
   User.findById(req.params.id, function(err,user){
     user.blogs.forEach(function(blog) {
-    Blog.findOneAndRemove({ _id: blog.id }, function(err) {
+    Blog.findByIdAndRemove({ _id: req.body.blogs_id }, function(err) {
       if (err) console.log(err);
     });
    });
@@ -83,7 +83,7 @@ router.delete('/:id/newblog', function(req, res){
  });
 });
 
-// CREATE LOGIN
+// CREATE - LOGIN
 router.post('/', passport.authenticate('local-signup', {
 	failureRedirect: '/users' }), function(req, res) {
     res.redirect('/users/' + req.user.id);
