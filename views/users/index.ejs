@@ -12,27 +12,32 @@
           <!-- If user is logged in, user will be routed to homepage on this page -->
           <% if (!login) { %>
             <div id='create'>
-              <h1 id='start'>Get Started</h1>
+              <h1 class='start'>Get Started</h1>
               <br>
               <!-- Form to create account -->
               <form action="/users" method="POST">
                 <input style='border:none' class='login' type="text" name="username" placeholder="username">
+                <div class='underline'></div>
                 <br>
                 <input style='border:none' class='login' type="text" name="email" placeholder="email">
+                <div class='underline'></div>
                 <br>
                 <input style='border:none' class='login' type="password" name="password" placeholder="password">
+                <div class='underline'></div>
                 <br>
                 <button  class='loginButton' type="submit">Create</button>
               </form>
             </div>
             <div id='login'>
-            <h1 id='log'>Log In</h1>
+            <h1 class='start'>Log In</h1>
             <br>
               <!-- For to log in -->
               <form action="/users/login" method="POST">
                 <input style='border:none' class='login' type="text" name="email" placeholder="email">
+                <div class='underline'></div>
                 <br>
                 <input style='border:none' class='login' type="password" name="password" placeholder="password">
+                <div class='underline'></div>
                 <br>
                 <button class='loginButton' type="submit">Go</button>
               </form>

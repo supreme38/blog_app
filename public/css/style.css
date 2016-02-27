@@ -17,9 +17,6 @@
   padding: 0;
 }
 
-/*.bigC{
-  width: 100%
-}*/
 
 .blogsContainer {
   text-align: center;
@@ -38,7 +35,6 @@
   color: white;
   font-size: 12px;
   text-align: center;
-  clear: both;
 }
 
 #showBody {
@@ -72,28 +68,27 @@
   width: 220px;
   height: 40px;
   margin-bottom: 10px;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0);
   font-size: 10px;
   color: white;
   text-align: center;
 }
 
-#start {
-  background-color: rgba(0,0,0,0.9);
-  width: 250px;
-  height: 40px;
+.underline {
+  border-bottom: solid 1px;
+  width: 200px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 10px;
 }
 
-#log {
-  background-color: rgba(0,0,0,0.9);
+.start {
+  background-color: rgba(0,0,0,0.5);
   width: 250px;
   height: 40px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 10px;
+  border: solid 1px;
 }
 
 .loginButton {
