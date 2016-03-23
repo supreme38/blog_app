@@ -296,3 +296,7 @@ li {
   max-width: 500px;
   max-height: 800px;
 }
+
+input:focus {
+    outline:none;
+}
