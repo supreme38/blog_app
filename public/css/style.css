@@ -43,7 +43,7 @@
 
 #background {
   position: absolute;
-  background-image: url('../images/login.jpg');
+  background-image: url('https://media.giphy.com/media/Yy26NRbpB9lDi/giphy.gif');
   background-position: center;
   background-size: cover;
   width: 100%;
@@ -89,6 +89,7 @@
   margin-right: auto;
   padding-top: 10px;
   border: solid 1px;
+  border-style: none;
 }
 
 .loginButton {
