@@ -16,14 +16,14 @@ You can test a fully working live demo [here](https://minify-blog.herokuapp.com/
 ## Installation
 ```git clone https://github.com/vincentliu38/photo-blog```
 
-## Usage
 ```npm install```
 
+## Usage
 ```npm start```
 
 ```open localhost:3000```
 
-# Built With
+## Built With
 | Front-End | Back-End | Authentication |
 |-----------|----------|----------------|
 |[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)|[Node.js](https://nodejs.org/en)|[Passport](http://passportjs.org/)|
