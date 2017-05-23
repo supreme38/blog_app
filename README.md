@@ -1,7 +1,7 @@
 # Minify
 >A photo blog. Share your blog or see what other's are posting.
 
-![Preview](http://www.vincent.engineer/assets/images/minblog.gif/)
+![Preview](http://www.vincent.engineer/assets/images/connect4.gif)
 
 You can test a fully working live demo [here](https://minify-blog.herokuapp.com/users)
 
@@ -18,7 +18,9 @@ You can test a fully working live demo [here](https://minify-blog.herokuapp.com/
 
 ## Usage
 ```npm install```
+
 ```npm start```
+
 ```open localhost:3000```
 
 ## Built With
