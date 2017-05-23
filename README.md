@@ -11,7 +11,7 @@ You can test a fully working live demo [here](https://minify-blog.herokuapp.com/
 - Check out what other's are posting
 
 ## Prerequisites
-- [MongoDB](https://docs.mongodb.com/manual/installation/)
+- [MongoDB](https://docs.mongodb.com/manual/installation)
 
 ## Installation
 ```git clone https://github.com/vincentliu38/photo-blog```
@@ -23,7 +23,7 @@ You can test a fully working live demo [here](https://minify-blog.herokuapp.com/
 ## Usage
 ```npm start```
 
-```open localhost:3000```
+```open http://localhost:3000```
 
 ## Built With
 | Front-End | Back-End | Authentication |
