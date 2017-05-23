@@ -16,6 +16,8 @@ You can test a fully working live demo [here](https://minify-blog.herokuapp.com/
 ## Installation
 ```git clone https://github.com/vincentliu38/photo-blog```
 
+```cd photo-blog```
+
 ```npm install```
 
 ## Usage
