@@ -1,5 +1,5 @@
 # Minify
->A photo blog. Share your blog or see what other's are posting.
+>A photo blog that you can share and see what other's are posting.
 
 ![Preview](http://i.imgur.com/1Aq1fm9.gif)
 
