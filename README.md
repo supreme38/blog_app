@@ -23,25 +23,13 @@ You can test a fully working live demo [here](https://minify-blog.herokuapp.com/
 
 ```open localhost:3000```
 
-### Front-End Stack
-- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
-- [jQuery](https://jquery.com/)
-- [EJS](http://ejs.co/)
-### Back-End Stack
-- [Node.js](https://nodejs.org/en)
-- [Express](https://expressjs.com)
-- [MongoDB](https://www.mongodb.com)
-- [Mongoose](http://mongoosejs.com)
-### Authentication
-- [Passport](http://passportjs.org/)
-- [bcrypt](https://www.npmjs.com/package/bcrypt)
-
-
+# Built With
 | Front-End | Back-End | Authentication |
 |-----------|----------|----------------|
-| [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) | [Node.js](https://nodejs.org/en) | [Passport](http://passportjs.org/)  |
-
+|[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)|[Node.js](https://nodejs.org/en)|[Passport](http://passportjs.org/)|
+|[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)|[Express](https://expressjs.com)|[bcrypt](https://www.npmjs.com/package/bcrypt)
+|[jQuery](https://jquery.com/)|[MongoDB](https://www.mongodb.com)| |
+|[EJS](http://ejs.co/)|[Mongoose](http://mongoosejs.com) |
 
 
 ## License
