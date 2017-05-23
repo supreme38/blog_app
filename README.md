@@ -37,6 +37,13 @@ You can test a fully working live demo [here](https://minify-blog.herokuapp.com/
 - [Passport](http://passportjs.org/)
 - [bcrypt](https://www.npmjs.com/package/bcrypt)
 
+
+| Front-End | Back-End | Authentication |
+|-----------|----------|----------------|
+| [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) | [Node.js](https://nodejs.org/en) | [Passport](http://passportjs.org/)  |
+
+
+
 ## License
 This project is licensed under the MIT License. For more information see [LICENSE](https://github.com/vincentliu38/connect-4/blob/gh-pages/LICENSE) file.
 
