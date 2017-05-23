@@ -1,7 +1,7 @@
 # Minify
 >A photo blog. Share your blog or see what other's are posting.
 
-![Preview](http://www.vincent.engineer/assets/images/minblog.gif)
+![Preview](http://www.vincent.engineer/assets/images/minblog.gif/)
 
 You can test a fully working live demo [here](https://minify-blog.herokuapp.com/users)
 
