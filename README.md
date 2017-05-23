@@ -23,20 +23,19 @@ You can test a fully working live demo [here](https://minify-blog.herokuapp.com/
 
 ```open localhost:3000```
 
-## Built With
-### Front-End
+### Front-End Stack
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [jQuery](https://jquery.com/)
 - [EJS](http://ejs.co/)
-### Back-End
+### Back-End Stack
 - [Node.js](https://nodejs.org/en)
 - [Express](https://expressjs.com)
 - [MongoDB](https://www.mongodb.com)
 - [Mongoose](http://mongoosejs.com)
 ### Authentication
 - [Passport](http://passportjs.org/)
-- [bcrypr](https://www.npmjs.com/package/bcrypt)
+- [bcrypt](https://www.npmjs.com/package/bcrypt)
 
 ## License
 This project is licensed under the MIT License. For more information see [LICENSE](https://github.com/vincentliu38/connect-4/blob/gh-pages/LICENSE) file.
