@@ -14,9 +14,9 @@ You can test a fully working live demo [here](https://minify-blog.herokuapp.com/
 - [MongoDB](https://docs.mongodb.com/manual/installation)
 
 ## Installation
-```git clone https://github.com/vincentliu38/not-tumblr```
+```git clone https://github.com/vincentliu38/minify```
 
-```cd not-tumblr```
+```cd minify```
 
 ```npm install```
 
