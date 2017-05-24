@@ -35,5 +35,5 @@ You can test a fully working live demo [here](https://minify-blog.herokuapp.com/
 
 
 ## License
-This project is licensed under the MIT License. For more information see [LICENSE](https://github.com/vincentliu38/connect-4/blob/gh-pages/LICENSE) file.
+This project is licensed under the MIT License. For more information see [LICENSE](https://github.com/vincentliu38/minify/blob/master/LICENSE) file.
 
