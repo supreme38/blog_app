@@ -29,8 +29,8 @@ You can test a fully working live demo [here](https://minify-blog.herokuapp.com/
 | Front-End | Back-End | Authentication |
 |-----------|----------|----------------|
 |[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)|[Node.js](https://nodejs.org/en)|[Passport](http://passportjs.org/)|
-|[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)|[Express](https://expressjs.com)|[Bcrypt](https://www.npmjs.com/package/bcrypt)
-|[jQuery](https://jquery.com/)|[MongoDB](https://www.mongodb.com)| |
+|[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)|[Express](https://expressjs.com)|
+|[jQuery](https://jquery.com/)|[MongoDB](https://www.mongodb.com)|
 |[EJS](http://ejs.co/)|[Mongoose](http://mongoosejs.com) |
 
 
